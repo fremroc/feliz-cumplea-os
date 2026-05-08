@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Jose Luis!</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --text: #1f2937;
+            --bg: #f3f4f6;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: var(--bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Animación de fondo (Confeti simple) */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            opacity: 0.3;
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border-top: 8px solid var(--primary);
+            
+            /* Animación de entrada de la tarjeta */
+            animation: fadeInScale 0.8s ease-out forwards;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .cake-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Elementos de decoración flotantes -->
+    <script>
+        for (let i = 0; i < 20; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'confetti';
+            dot.style.left = Math.random() * 100 + 'vw';
+            dot.style.animationDelay = Math.random() * 5 + 's';
+            dot.style.backgroundColor = ['#6366f1', '#a855f7', '#ec4899', '#f59e0b'][Math.floor(Math.random() * 4)];
+            document.body.appendChild(dot);
+        }
+    </script>
+
+    <div class="card">
+        <span class="cake-icon">🎂</span>
+        <h1>¡Feliz cumpleaños, Jose Luis!</h1>
+        
+        <p>Primo, hoy que estás celebrando un año más de vida, no quería dejar pasar el momento para decirte lo mucho que valoro tu amistad. Más que un primo, has sido un <strong>apoyo fundamental</strong> para mí.</p>
+        
+        <p>Te agradezco de todo corazón por estar ahí en los momentos clave, por darme la mano cuando lo he necesitado y por los buenos consejos. Personas como tú, que siempre están dispuestas a ayudar y a tirar para adelante, son las que uno quiere tener cerca toda la vida.</p>
+        
+        <p>Deseo que este nuevo año venga cargado de éxitos, de mucha salud y que cumplas cada meta que te propongas. <span class="highlight">¡Te mereces lo mejor hoy y siempre!</span></p>
+
+        <div class="footer">
+            Un gran abrazo de tu primo
+        </div>
+    </div>
+
+</body>
+</html>
